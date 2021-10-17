@@ -4,6 +4,7 @@ pipeline {
         //This Node container will become the agent that Jenkins uses to run the pipeline project, however, the container is short-lived,
         //- its lifespan is only that of the duration of your Pipeline’s execution.
         docker {
+            sh 'docker -v'
             image 'node:lts-buster-slim'
             //	This args parameter makes the Node container (temporarily) accessible through port 3000.
             //  The significance of this is explained in the jenkins/scripts/deliver.sh file
@@ -14,8 +15,6 @@ pipeline {
         //Initialise the Docker inside the Jenkins Server
         stage('Initialize'){
             steps {
-                sh 'docker -v'
-
                 script {
                     def dockerHome = tool 'Docker'
                     env.PATH = "${dockerHome}/bin:${env.PATH}"
