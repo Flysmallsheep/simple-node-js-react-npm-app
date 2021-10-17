@@ -13,9 +13,11 @@ pipeline {
     stages {
         //Initialise the Docker inside the Jenkins Server
         stage('Initialize'){
+            steps{
                 def dockerHome = tool 'Docker'
                 env.PATH = "${dockerHome}/bin:${env.PATH}"
             }
+        }
         stage('Build') {
             steps {
                 //This sh step executes the npm command to download required dependencies to node_modules directory in Jenkins server
