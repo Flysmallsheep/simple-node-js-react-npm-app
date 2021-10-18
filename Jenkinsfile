@@ -27,7 +27,9 @@ pipeline {
                 sh 'which npm'
 //                 sh 'chattr -i "/usr/local/bin/npm"'
 //                 sh 'chown -R 111:116 "/usr/local/bin/npm"'
-                sh 'chown -R root:users "/usr/local/bin/npm"'
+
+                sh 'chown --help'
+//                 sh 'chown -R root:users "/usr/local/bin/npm"'
 //                 sh 'chown -R $(whoami) "/usr/local/bin/npm"'
                 sh 'npm install'
             }
