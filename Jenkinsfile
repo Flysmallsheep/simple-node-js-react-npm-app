@@ -15,17 +15,13 @@ pipeline {
             steps {
                 //This sh step executes the npm command to download required dependencies to node_modules directory in Jenkins server
                 sh 'ls -a' //list hidden file
+                sh 'csrutil(1)'
                 sh 'which npm'
                 sh 'npm cache clean --force --loglevel=error'
-
-                sh 'chattr -i "/usr/local/bin/npm"'
                 sh 'chown -R 111:116 "/usr/local/bin/npm"'
 
 //                 sh 'NPM_CONFIG_PREFIX=~/.npm-global'
 
-//                 sh 'chown -R 111:116 "/usr/local/bin/npm"'
-//                 sh 'chown -R root:users "/usr/local/bin/npm"'
-//                 sh 'chown -R $(whoami) "/usr/local/bin/npm"'
                 sh 'npm install'
             }
         }
