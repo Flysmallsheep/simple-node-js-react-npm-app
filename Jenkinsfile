@@ -13,12 +13,12 @@ pipeline {
     stages {
         //Initialise the Docker inside the Jenkins Server
         stage('Initialize'){
-            steps {
-                script {
-                    def dockerHome = tool 'Docker'
-                    env.PATH = "${dockerHome}/bin:${env.PATH}"
-                }
-            }
+//             steps {
+//                 script {
+//                     def dockerHome = tool 'Docker'
+//                     env.PATH = "${dockerHome}/bin:${env.PATH}"
+//                 }
+//             }
         }
         stage('Build') {
             steps {
