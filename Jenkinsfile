@@ -17,10 +17,12 @@ pipeline {
                 sh 'ls -a' //list hidden file
                 sh 'which npm'
                 sh 'npm cache clean --force --loglevel=error'
+
+                sh 'chattr -i "/usr/local/bin/npm"'
                 sh 'chown -R 111:116 "/usr/local/bin/npm"'
 
 //                 sh 'NPM_CONFIG_PREFIX=~/.npm-global'
-//                 sh 'chattr -i "/usr/local/bin/npm"'
+
 //                 sh 'chown -R 111:116 "/usr/local/bin/npm"'
 //                 sh 'chown -R root:users "/usr/local/bin/npm"'
 //                 sh 'chown -R $(whoami) "/usr/local/bin/npm"'
