@@ -17,7 +17,7 @@ pipeline {
                 sh 'ls -a' //list hidden file
                 sh 'which npm'
                 sh 'npm cache clean --force --loglevel=error'
-                sh 'sudo chown -R 111:116 "/.npm"'
+                sh 'chown -R 111:116 "/.npm"'
 
 //                 sh 'NPM_CONFIG_PREFIX=~/.npm-global'
 //                 sh 'chattr -i "/usr/local/bin/npm"'
