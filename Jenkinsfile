@@ -12,7 +12,7 @@ pipeline {
     }
     stages {
         //Initialise the Docker inside the Jenkins Server
-        stage('Initialize'){
+//         stage('Initialize'){
 //             steps {
 //                 script {
 //                     def dockerHome = tool 'Docker'
