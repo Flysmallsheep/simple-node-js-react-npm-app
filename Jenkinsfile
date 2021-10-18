@@ -26,8 +26,8 @@ pipeline {
                 sh 'ls -a' //list hidden file
                 sh 'which npm'
 //                 sh 'chattr -i "/usr/local/bin/npm"'
-//                 sh 'chown -R 111:116 "/usr/local/bin/npm"'
-                sh 'chown -R $(whoami) "/usr/local/bin/npm"'
+                sh 'chown -R 111:116 "/usr/local/bin/npm"'
+//                 sh 'chown -R $(whoami) "/usr/local/bin/npm"'
                 sh 'npm install'
             }
         }
