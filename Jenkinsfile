@@ -6,7 +6,7 @@ pipeline {
         stage('Build') {
             agent {
                     docker {
-                        image 'node:lts-buster-slim'
+                        image 'node:14.18.0'
                         //	This args parameter makes the Node container (temporarily) accessible through port 3000.
                         //  The significance of this is explained in the jenkins/scripts/deliver.sh file
                         args '-p 3000:3000'
