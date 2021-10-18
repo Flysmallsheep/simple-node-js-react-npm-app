@@ -19,7 +19,7 @@ pipeline {
 //                     env.PATH = "${dockerHome}/bin:${env.PATH}"
 //                 }
 //             }
-        }
+//         }
         stage('Build') {
             steps {
                 //This sh step executes the npm command to download required dependencies to node_modules directory in Jenkins server
