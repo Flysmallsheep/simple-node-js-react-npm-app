@@ -23,7 +23,8 @@ pipeline {
         stage('Build') {
             steps {
                 //This sh step executes the npm command to download required dependencies to node_modules directory in Jenkins server
-                sh 'ls -a'
+                sh 'ls -a' //list hidden file
+                sh 'which npm'
                 sh 'chown -R 111:116 "~/.npm-global"'
                 sh 'npm install'
             }
